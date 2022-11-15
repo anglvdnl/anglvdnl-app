@@ -1,0 +1,128 @@
+.spheres {
+  position: fixed;
+  width: calc(566.67px + 15%);
+  height: calc(552.67px + 15%);
+  left: calc(313px + 5%);
+  top: calc(215px + 35%);
+  background-image: url("../../assets/spheres.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper {
+  display: flex;
+
+  &__info {
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__title {
+    margin: 150px 0 0 50px;
+
+    img {
+      position: relative;
+      z-index: 2;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    margin: 50px 0 0 115px;
+    z-index: 2;
+
+    button {
+      margin-right: 50px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+
+      p {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 100.94%;
+        border-bottom: 1px solid #000;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__logo {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      &:nth-child(1){
+        animation: bigCircleRotation 6s linear infinite;
+      }
+      &:nth-child(2){
+        animation: smallCircleRotation 3s linear infinite;
+      }
+    }
+
+    p {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      font-family: 'Mallanna', sans-serif;
+      font-weight: 400;
+      font-size: 128px;
+      line-height: 237px;
+      color: #000000;
+
+      &:nth-child(3) {
+        top: calc(50% - 25px);
+        left: calc(50% - 25px);
+      }
+
+      &:nth-child(4) {
+        top: calc(50% + 25px);
+        left: calc(50% + 25px);
+      }
+    }
+  }
+}
+
+@keyframes circleRotation {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes bigCircleRotation {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes smallCircleRotation {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
