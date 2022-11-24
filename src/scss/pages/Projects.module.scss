@@ -1,0 +1,15 @@
+.container {
+  width: 92vw;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+
+  h1 {
+    position: absolute;
+    margin-top: 50px;
+    font-weight: 600;
+    font-size: 32px;
+    border-bottom: 2px solid black;
+    width: 100%;
+  }
+}

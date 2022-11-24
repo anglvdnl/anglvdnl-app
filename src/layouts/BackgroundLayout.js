@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {noise} from '../libs/noiseBg';
-import styles from './BackgroundLayout.module.scss'
+import styles from './BackgroundLayout.module.scss';
 
 function BackgroundLayout({children}) {
     const noiseCanvasRef = useRef(null);
