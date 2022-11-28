@@ -22,11 +22,16 @@ function Projects(props) {
         }
     }
 
+    let Scroll = require('react-scroll');
+    let Events = Scroll.Events;
+
+    Events.scrollEvent.register('begin', function(to, element) {
+        console.log('begin', to, element);
+    });
+
     return (
         <BackgroundLayout>
-            <div
-                className={styles.container}
-            >
+            <div onScroll={(e) => console.log(e)} className={styles.container}>
                 <header>
                     <Navbar/>
                 </header>

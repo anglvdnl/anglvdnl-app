@@ -66,10 +66,8 @@ function AboutMe() {
                     <span className={styles.boxShadow}></span>
                     <div className={styles.info__text}>
                         <div className={styles.text__section}>
-                            <p className={styles.sectionTitle}>I’m Daniel, nice to meet you!</p>
-                            <p className={styles.sectionText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.Lorem ipsum
-                                dolor sit amtur.</p>
+                            <p className={styles.sectionTitle}>{text.INTRODUCE}</p>
+                            <p className={styles.sectionText}>{text.TEXT_2022}</p>
                             <div className={styles.illustration}>
                                 <div className={styles.illustration__date}>
                                     <p>2022</p>
@@ -85,9 +83,7 @@ function AboutMe() {
                             </div>
                         </div>
                         <div className={styles.text__section}>
-                            <p className={`${styles.sectionText} ${styles.invertedSectionText}`}>Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                magna aliqua. Ut enim.Lorem ipsum dolor sit amtur.</p>
+                            <p className={`${styles.sectionText} ${styles.invertedSectionText}`}>{text.TEXT_2019}</p>
                             <div className={`${styles.illustration} ${styles['illustration-reversed']}`}>
                                 <div className={styles.illustration__date}>
                                     <span></span>
@@ -103,9 +99,7 @@ function AboutMe() {
                             </div>
                         </div>
                         <div className={styles.text__section}>
-                            <p className={styles.sectionText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.Lorem ipsum
-                                dolor sit amtur.</p>
+                            <p className={styles.sectionText}>{text.TEXT_CHILDHOOD}</p>
                             <div className={styles.illustration}>
                                 <img className={`${styles.illustration__img} ${styles.house}`} src={house} alt=""/>
                             </div>
