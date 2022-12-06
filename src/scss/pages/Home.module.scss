@@ -3,21 +3,10 @@
   src: url('../../assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
 }
 
-.container{
+.container {
   width: 92vw;
   margin: 0 auto;
-}
-
-.spheres {
-  position: absolute;
-  width: 800px;
-  height: 700px;
-  left: calc(313px + 5%);
-  top: calc(215px + 30%);
-  background-image: url("../../assets/Spheres.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  overflow: hidden;
 }
 
 .wrapper {
@@ -26,9 +15,28 @@
   align-items: center;
 
   &__info {
+    position: relative;
     display: flex;
     flex-flow: column;
     margin-top: 50px;
+
+    .spheres {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      top: 20px;
+      left: 80%;
+      transform: translate(-100%, 0);
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      img {
+        position: absolute;
+        width: 700px;
+        height: 700px;
+      }
+    }
   }
 
   &__title {
@@ -44,8 +52,8 @@
         font-family: 'Montserrat SemiBold', sans-serif;
       }
 
-      &:nth-child(1){
-        span{
+      &:nth-child(1) {
+        span {
           color: transparent;
           -webkit-text-stroke: 2px black;
           letter-spacing: 0.145em;
@@ -59,7 +67,7 @@
       &:nth-child(3) {
         margin-left: 50px;
 
-        span{
+        span {
           color: transparent;
           -webkit-text-stroke: 1px black;
         }
@@ -83,7 +91,6 @@
       p {
         font-weight: 500;
         font-size: 20px;
-        line-height: 100.94%;
         border-bottom: 1px solid #000;
         margin-right: 10px;
       }
@@ -113,24 +120,22 @@
 
       &:nth-child(1) {
         animation: bigCircleRotation 6s linear infinite;
-        width: calc(438px - 5%);
-        height: calc(430px - 5%);
+        width: 400px;
+        height: 400px;
       }
 
       &:nth-child(2) {
         animation: smallCircleRotation 3s linear infinite;
-        width: calc(362px - 5%);
-        height: calc(355px - 5%);
+        width: 330px;
+        height: 330px;
       }
     }
 
     p {
       position: absolute;
-      transform: translate(-50%, -50%);
       font-family: 'Mallanna', sans-serif;
       font-weight: 400;
       font-size: 128px;
-      line-height: 237px;
       color: #000000;
       -webkit-user-select: none;
       -ms-user-select: none;
@@ -160,11 +165,14 @@
   cursor: pointer;
 
   &__spheres {
-    width: calc(228px - 5%);
-    height: calc(175px - 5%);
+    width: 200px;
+    height: 166px;
     position: absolute;
     right: 80px;
     top: -10px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   &__text {
@@ -176,7 +184,6 @@
       font-family: 'Mallanna', sans-serif;
       font-weight: 400;
       font-size: 28px;
-      line-height: 52px;
       margin-right: 10px;
     }
 
@@ -201,5 +208,218 @@
   }
   100% {
     transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@media (max-width: 1470px) {
+
+  .wrapper {
+    margin-top: 50px;
+
+    &__info {
+      margin: 0;
+    }
+
+    &__title {
+
+      h1 {
+        font-size: 54px;
+        line-height: 75px;
+      }
+    }
+
+    &__logo {
+      width: 450px;
+      height: 450px;
+
+      p {
+        font-size: 118px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+
+  .wrapper {
+    margin-top: 80px;
+
+    &__info {
+      .spheres {
+        img {
+          width: 600px;
+          height: 600px;
+        }
+      }
+    }
+
+    &__title {
+      h1 {
+        font-size: 48px;
+        line-height: 65px;
+      }
+    }
+
+    &__logo {
+      width: 400px;
+      height: 400px;
+
+      img {
+
+        &:nth-child(1) {
+          width: 380px;
+          height: 380px;
+        }
+
+        &:nth-child(2) {
+          width: 310px;
+          height: 310px;
+        }
+      }
+
+      p {
+        font-size: 100px;
+
+        &:nth-child(3) {
+          top: calc(50% - 20px);
+          left: calc(50% - 20px);
+        }
+
+        &:nth-child(4) {
+          top: calc(50% + 20px);
+          left: calc(50% + 20px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .wrapper {
+    margin-top: 50px;
+    flex-flow: column;
+    justify-content: space-between;
+
+    &__info {
+      .spheres {
+        img {
+          width: 550px;
+          height: 550px;
+        }
+      }
+    }
+
+    &__title {
+      h1 {
+        line-height: 75px;
+        font-size: 54px;
+        text-align: center;
+
+        &:nth-child(2) {
+          margin-left: 0;
+        }
+
+        &:nth-child(3) {
+          margin-left: 0;
+        }
+      }
+    }
+
+    &__btns {
+      margin: 10px 0 0 0;
+      justify-content: center;
+    }
+
+    &__logo {
+      margin-top: 20px;
+      width: 300px;
+      height: 300px;
+
+      img {
+
+        &:nth-child(1) {
+          width: 280px;
+          height: 280px;
+        }
+
+        &:nth-child(2) {
+          width: 220px;
+          height: 220px;
+        }
+      }
+
+      p {
+        font-size: 80px;
+
+        &:nth-child(3) {
+          top: calc(50% - 15px);
+          left: calc(50% - 15px);
+        }
+
+        &:nth-child(4) {
+          top: calc(50% + 15px);
+          left: calc(50% + 15px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 735px) {
+  .wrapper {
+    margin-top: 50px;
+
+    &__title {
+      h1 {
+        line-height: 65px;
+        font-size: 44px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .spheres {
+
+    top: 260px;
+    width: 500px;
+    height: 400px;
+  }
+
+  .wrapper {
+    margin-top: 50px;
+
+    &__info {
+      .spheres {
+        img {
+          left: 0;
+          top: -20px;
+          width: 400px;
+          height: 400px;
+        }
+      }
+    }
+
+    &__title {
+      h1 {
+        line-height: 40px;
+        font-size: 28px;
+      }
+    }
+
+    &__btns {
+      margin: 20px 0 0 0;
+      justify-content: space-around;
+
+      button {
+        margin: 0;
+      }
+    }
+
+    &__logo {
+      margin-top: 30px;
+      height: 300px;
+      width: 300px;
+    }
   }
 }

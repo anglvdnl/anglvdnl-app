@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './NavbarItem.module.scss';
-import arrow from '../../assets/NavbarArrow.svg';
+import arrow from '../../assets/icons/NavbarArrow.svg';
 import { motion } from 'framer-motion'
 
-function NavbarItem({value, link, desc, index}) {
+function NavbarItem({value, link, desc, index, isBurger}) {
 
     const navbarVariants = {
         hidden: {
@@ -15,7 +15,7 @@ function NavbarItem({value, link, desc, index}) {
             opacity: 1,
             y: 0,
             transition: {
-                delay: 0.8 + i * 0.1,
+                delay: (isBurger ? 0.2 : 0.4) + i * 0.1,
                 ease: 'anticipate',
                 duration: 0.5
             }

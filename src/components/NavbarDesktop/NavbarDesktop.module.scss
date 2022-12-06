@@ -1,0 +1,11 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+
+  &__group {
+    display: flex;
+    margin-top: 25px;
+    justify-content: space-between;
+    width: 800px;
+  }
+}

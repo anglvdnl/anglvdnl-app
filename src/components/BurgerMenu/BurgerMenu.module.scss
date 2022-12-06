@@ -1,0 +1,34 @@
+.navigation-menu {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  color: #000;
+  z-index: 99999;
+
+  .container {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .burgerItems {
+    width: fit-content;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.burger {
+  position: absolute;
+  top: 7%;
+  right: 15%;
+  transform: translate(-15%, -7%);
+}

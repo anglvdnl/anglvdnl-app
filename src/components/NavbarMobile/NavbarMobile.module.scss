@@ -1,0 +1,15 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+
+  &__name {
+    margin-top: 25px;
+
+    p {
+      font-weight: 700;
+      font-size: 20px;
+    }
+  }
+}

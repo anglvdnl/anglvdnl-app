@@ -3,7 +3,7 @@
   src: url('../../assets/fonts/Montserrat-SemiBold.ttf') format('truetype');
 }
 
-.container{
+.container {
   width: 92vw;
   margin: 0 auto;
 }
@@ -14,6 +14,10 @@ header {
 }
 
 .wrapper {
+  display: flex;
+}
+
+.intro {
   margin-top: 30px;
   display: flex;
   flex-flow: column;
@@ -33,7 +37,6 @@ header {
     }
 
     hr {
-      width: 300px;
       background-color: #000;
       border: 2px solid #000;
       z-index: 1;
@@ -41,9 +44,8 @@ header {
   }
 
   &__img {
-    margin-top: 10px;
-    padding: 35px 0 35px 0;
-    width: 45vw;
+    padding: 45px 0 35px 0;
+    width: 46vw;
     text-align: center;
     z-index: 1;
 
@@ -65,17 +67,18 @@ header {
   right: 0;
   filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.25));
   z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  overflow: hidden;
 
   p {
     font-family: 'Nunito', sans-serif;
   }
 
   &__text {
-    position: absolute;
-    top: 200px;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 180px;
     width: 90%;
     overflow-y: scroll;
     padding-top: 40px;
@@ -90,14 +93,15 @@ header {
     z-index: 2;
     position: absolute;
     top: 100px;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
     background: rgb(255, 255, 255);
     height: 90px;
   }
 }
 
 .text__section {
-
   .sectionTitle {
     font-weight: 600;
     font-size: 20px;
@@ -122,19 +126,22 @@ header {
     margin: 10px 0;
     height: 350px;
 
-    .pc{
+    .pc {
       width: 550px;
       height: 310px;
+      object-fit: cover;
     }
 
-    .apples{
+    .apples {
       width: 386px;
       height: 170px;
+      object-fit: cover;
     }
 
-    .house{
+    .house {
       width: 388px;
       height: 208px;
+      object-fit: cover;
     }
 
     &__date {
@@ -162,32 +169,293 @@ header {
     }
   }
 
-  .illustration-reversed{
+  .illustration-reversed {
     flex-flow: row-reverse;
 
-    .illustration__date{
-      img{
+    .illustration__date {
+      img {
         left: 9px;
       }
-      p{
+
+      p {
         margin: 0 0 0 15px;
       }
     }
   }
 }
 
-.text__section:nth-child(3){
-  .illustration{
+.text__section:nth-child(3) {
+  .illustration {
     height: auto;
   }
 }
 
 @keyframes boxShadowAnimation {
-  0%{
+  0% {
     box-shadow: 0px 0px 0px rgba(#F6A593, 0), 0px 0px 0px rgba(#C4A2F1, 0);
   }
 
-  100%{
+  100% {
     box-shadow: -20px -20px 0px rgba(#F6A593, 1), 20px 20px 0px rgba(#C4A2F1, 1);
+  }
+}
+
+@media (max-width: 1410px) {
+  .text__section {
+    .illustration {
+      height: 250px;
+
+      .pc {
+        width: 420px;
+        height: 260px;
+      }
+
+      .apples {
+        width: 320px;
+        height: 145px;
+      }
+
+      .house {
+        width: 327px;
+        height: 175px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .intro {
+    &__title {
+      h1 {
+        font-size: 54px;
+        margin: 0 40px 0 60px;
+      }
+    }
+
+    &__img {
+      img {
+        width: 350px;
+        height: 400px;
+      }
+    }
+  }
+
+  .text__section {
+    .sectionTitle {
+      font-size: 18px;
+    }
+
+    .sectionText {
+      font-size: 18px;
+    }
+
+    .illustration {
+      .pc {
+        width: 340px;
+        height: 210px;
+      }
+
+      .apples {
+        width: 280px;
+        height: 120px;
+      }
+
+      .house {
+        width: 280px;
+        height: 150px;
+      }
+
+      &__date {
+        p {
+          font-size: 18px;
+        }
+
+        span {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1010px) {
+  .wrapper {
+    flex-flow: column;
+  }
+
+  .intro {
+    &__title {
+      justify-content: center;
+
+      h1 {
+        margin-right: 50px;
+      }
+    }
+
+    &__img {
+      padding-top: 45px;
+      width: 100%;
+
+      img {
+        width: 400px;
+        height: 450px;
+      }
+    }
+  }
+
+  .info {
+    position: static;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    margin-top: 50px;
+
+    &__text {
+      position: static;
+      transform: none;
+      width: 80%;
+      margin: 0 auto;
+      padding-top: 40px;
+      overflow: hidden;
+    }
+
+    .boxShadow {
+      display: none;
+    }
+  }
+  .text__section {
+
+    .sectionTitle {
+      font-size: 20px;
+    }
+
+    .sectionText {
+      font-size: 20px;
+    }
+
+    .illustration {
+      height: 350px;
+
+      .pc {
+        width: 550px;
+        height: 310px;
+      }
+
+      .apples {
+        width: 386px;
+        height: 170px;
+      }
+
+      .house {
+        width: 388px;
+        height: 208px;
+      }
+
+      &__date {
+
+        p {
+          font-size: 20px;
+        }
+
+        span {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 870px) {
+  .intro {
+    &__title {
+      h1 {
+        font-size: 44px;
+      }
+    }
+
+    &__img {
+      img {
+        width: 350px;
+        height: 400px;
+      }
+    }
+  }
+
+  .text__section {
+
+    .illustration {
+      height: 250px;
+
+      .pc {
+        width: 300px;
+        height: 210px;
+      }
+
+      .apples {
+        width: 260px;
+        height: 120px;
+      }
+
+      .house {
+        width: 260px;
+        height: 140px;
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .intro {
+    &__title {
+      flex-flow: column;
+
+      h1 {
+        margin: 0 0 20px 0;
+        font-size: 34px;
+      }
+    }
+
+    &__img {
+      img {
+        width: 300px;
+        height: 350px;
+      }
+    }
+  }
+
+  .text__section {
+
+    .sectionTitle {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .sectionText {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .illustration {
+      align-items: center;
+      margin: 0;
+      height: 200px;
+
+      .pc {
+        width: 350px;
+        height: auto;
+      }
+
+      .apples {
+        width: 300px;
+        height: auto;
+      }
+
+      .house {
+        width: 300px;
+        height: 160px;
+      }
+    }
   }
 }

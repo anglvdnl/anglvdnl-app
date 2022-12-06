@@ -1,106 +1,29 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './Project.module.scss';
-import dotLine from '../../assets/horizontalDotLine.png';
-import arrow from '../../assets/VisitSiteArrow.svg';
-import { motion } from 'framer-motion';
+import dotLine from '../../assets/images/horizontalDotLine.png';
+import arrow from '../../assets/icons/VisitSiteArrow.svg';
+import { useAnimation, motion } from 'framer-motion';
+import { useIsInViewport } from '../../hooks/useIsInViewport';
+import useMediaQuery from '../../hooks/useMediaQuery.ts';
+import { projectVariants, skillsVariants } from './ProjectVariants/ProjectVariants';
+import { mobileProjectVariants, mobileSkillsVariants } from './ProjectVariants/ProjectMobileVariants';
 
 function Project({number, title, desc, skills, img, link, isReversed}) {
 
-    const isEven = (n) => {
-        return n % 2 === 0;
-    }
+    const isTablet = useMediaQuery('(max-width: 1110px)');
+    const isPhone950 = useMediaQuery('(max-width: 950px)');
+    const isNavbarBreakpoint = useMediaQuery('(max-width: 1200px)')
 
-    const headingVariants = {
-        number: {
-            hidden: {
-                opacity: 0,
-                y: -20
-            },
-            visible: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                    duration: 0.5,
-                    delay: 1.6
-                }
-            }
-        },
-        heading: {
-            hidden: {
-                opacity: 0,
-                y: -20
-            },
-            visible: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                    duration: 0.5,
-                    delay: 1.6
-                }
-            }
-        }
-    };
+    const controls = useAnimation();
+    const ref = useRef(null);
+    const inViewport = useIsInViewport(ref);
 
-    const textVariants = {
-        hidden: {
-            opacity: 0,
-            y: -20
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5,
-                delay: 1.8
-            }
+    useEffect(() => {
+        if (inViewport) {
+            controls.start('visible');
         }
-    };
-
-    const skillsVariants = {
-        line: {
-            hidden: {
-                width: 0,
-                top: 33
-            },
-            visible: {
-                width: 400,
-                transition: {
-                    duration: 1,
-                    delay: 1.8
-                }
-            }
-        },
-        skills: {
-            hidden: (i) => ({
-                opacity: 0,
-                y: isEven(i) ? 50 : -50
-            }),
-            visible: (i) => ({
-                opacity: 1,
-                y: 0,
-                transition: {
-                    duration: 0.5 + i * 0.1,
-                    ease: 'easeInOut',
-                    delay: 1.9
-                }
-            })
-        }
-    };
-
-    const linkVariants = {
-        hidden: {
-            opacity: 0,
-            y: -20
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5,
-                delay: 2
-            }
-        }
-    };
+    }, [controls, inViewport]);
+    console.log("pizda")
 
     return (
         <div
@@ -109,39 +32,44 @@ function Project({number, title, desc, skills, img, link, isReversed}) {
             <div className={styles.project__info}>
                 <div className={styles.info__title}>
                     <motion.p
-                        variants={headingVariants.number}
-                        initial={'hidden'}
-                        animate={'visible'}
+                        variants={isPhone950 ? mobileProjectVariants.number : projectVariants.number}
+                        initial="hidden"
+                        animate={number > 1 ? controls : 'visible'}
+                        custom={{isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
+                        ref={ref}
                     >0{number}.
                     </motion.p>
                     <motion.p
-                        variants={headingVariants.heading}
-                        initial={'hidden'}
-                        animate={'visible'}
+                        variants={isPhone950 ? mobileProjectVariants.title : projectVariants.title}
+                        initial="hidden"
+                        animate={number > 1 ? controls : 'visible'}
+                        custom={{isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
                     >{title}</motion.p>
                 </div>
                 <motion.p
-                    variants={textVariants}
-                    initial={'hidden'}
-                    animate={'visible'}
+                    variants={isPhone950 ? mobileProjectVariants.text : projectVariants.text}
+                    initial="hidden"
+                    animate={number > 1 ? controls : 'visible'}
+                    custom={{isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
                     className={styles.info__text}>
                     {desc}
                 </motion.p>
                 <div className={styles.info__skills}>
                     <motion.img
-                        variants={skillsVariants.line}
-                        initial={"hidden"}
-                        animate={"visible"}
+                        variants={isPhone950 ? mobileSkillsVariants.line : skillsVariants.line}
+                        initial="hidden"
+                        animate={number > 1 ? controls : 'visible'}
+                        custom={{isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
                         src={dotLine}
                         alt=""
                     />
                     <div className={styles.skillsList}>
                         {skills.map((x, index) => (
                             <motion.div
-                                variants={skillsVariants.skills}
-                                initial={"hidden"}
-                                animate={"visible"}
-                                custom={index}
+                                variants={isPhone950 ? mobileSkillsVariants.skills : skillsVariants.skills}
+                                initial="hidden"
+                                animate={number > 1 ? controls : 'visible'}
+                                custom={{index: index, isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
                                 key={index}
                                 className={styles.skillsItem}
                             >
@@ -152,9 +80,10 @@ function Project({number, title, desc, skills, img, link, isReversed}) {
                     </div>
                 </div>
                 <motion.div
-                    variants={textVariants}
-                    initial={'hidden'}
-                    animate={'visible'}
+                    variants={isPhone950 ? mobileProjectVariants.link : projectVariants.link}
+                    initial="hidden"
+                    animate={number > 1 ? controls : 'visible'}
+                    custom={{isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
                     className={styles.info__link}
                 >
                     <a href={link}
@@ -167,7 +96,14 @@ function Project({number, title, desc, skills, img, link, isReversed}) {
                     </a>
                 </motion.div>
             </div>
-            <motion.img src={img} alt="" className={styles.project__img}/>
+            <motion.img
+                variants={isPhone950 ? mobileProjectVariants.img : projectVariants.img}
+                initial="hidden"
+                animate={number > 1 ? controls : 'visible'}
+                custom={{isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
+                src={img}
+                alt=""
+                className={styles.project__img}/>
         </div>
     );
 }
