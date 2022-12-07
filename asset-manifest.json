@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/anglvdnl-app/static/css/main.03d511af.css",
-    "main.js": "/anglvdnl-app/static/js/main.a4bf8e85.js",
+    "main.css": "/anglvdnl-app/static/css/main.00729a87.css",
+    "main.js": "/anglvdnl-app/static/js/main.48b9ff2c.js",
     "static/js/787.150169f9.chunk.js": "/anglvdnl-app/static/js/787.150169f9.chunk.js",
     "static/media/me.jpg": "/anglvdnl-app/static/media/me.5596711d89628c3a1408.jpg",
     "static/media/Spheres.png": "/anglvdnl-app/static/media/Spheres.f40b4784ce3853cecdc8.png",
@@ -26,12 +26,12 @@
     "static/media/NavbarArrow.svg": "/anglvdnl-app/static/media/NavbarArrow.26ef15757995610aecc4bcda906d9c06.svg",
     "static/media/EmailArrow.svg": "/anglvdnl-app/static/media/EmailArrow.885acfa458cbb42d058c0257ef8efa8d.svg",
     "static/media/VisitSiteArrow.svg": "/anglvdnl-app/static/media/VisitSiteArrow.bbf04b764e7203b175b851d433c24c68.svg",
-    "main.03d511af.css.map": "/anglvdnl-app/static/css/main.03d511af.css.map",
-    "main.a4bf8e85.js.map": "/anglvdnl-app/static/js/main.a4bf8e85.js.map",
+    "main.00729a87.css.map": "/anglvdnl-app/static/css/main.00729a87.css.map",
+    "main.48b9ff2c.js.map": "/anglvdnl-app/static/js/main.48b9ff2c.js.map",
     "787.150169f9.chunk.js.map": "/anglvdnl-app/static/js/787.150169f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.03d511af.css",
-    "static/js/main.a4bf8e85.js"
+    "static/css/main.00729a87.css",
+    "static/js/main.48b9ff2c.js"
   ]
 }
