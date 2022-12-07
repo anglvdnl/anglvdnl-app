@@ -2,14 +2,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80vh;
+  margin: 0 0 200px 0;
 
   &__info {
     width: 35%;
   }
 
   &__img {
-
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .info {
@@ -198,7 +201,6 @@
   .project {
     flex-flow: column-reverse;
     justify-content: center;
-    margin-bottom: 50px;
 
     &__info {
       width: 100%;
@@ -206,6 +208,7 @@
 
     &__img {
       width: 700px;
+      height: 400px;
     }
 
     .info {
@@ -268,6 +271,110 @@
 
     &__img {
       width: 500px;
+      height: 277px;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .project {
+    margin-bottom: 100px;
+    &__img {
+      width: 400px;
+      height: 222px;
+    }
+
+    .info {
+      &__title {
+
+        p:first-child {
+          font-size: 76px;
+        }
+
+        p:last-child {
+          font-size: 34px;
+        }
+      }
+
+      &__text {
+        font-size: 16px;
+      }
+
+      &__skills {
+        width: 300px;
+
+        .skillsItem {
+
+          p {
+            font-size: 15px;
+          }
+
+          span {
+            width: 23px;
+            height: 23px;
+          }
+        }
+      }
+
+      &__link {
+
+        a {
+          p {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .project {
+
+    &__img {
+      width: 300px;
+      height: 167px;
+    }
+
+    .info {
+      &__title {
+
+        p:first-child {
+          font-size: 66px;
+        }
+
+        p:last-child {
+          font-size: 28px;
+        }
+      }
+
+      &__text {
+        font-size: 15px;
+      }
+
+      &__skills {
+
+        .skillsItem {
+
+          p {
+            font-size: 14px;
+          }
+
+          span {
+            width: 22px;
+            height: 22px;
+          }
+        }
+      }
+
+      &__link {
+
+        a {
+          p {
+            font-size: 18px;
+          }
+        }
+      }
     }
   }
 }

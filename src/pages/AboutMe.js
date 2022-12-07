@@ -116,7 +116,7 @@ function AboutMe() {
                     </div>
                     <motion.div
                         className={styles.info}
-                        variants={infoSectionVariants}
+                        variants={!isPhone1010 && infoSectionVariants}
                         initial="hidden"
                         animate="visible"
                     >

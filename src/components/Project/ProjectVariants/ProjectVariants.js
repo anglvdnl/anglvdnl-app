@@ -4,12 +4,12 @@ export const projectVariants = {
             opacity: 0,
             y: -20
         },
-        visible: (arr) => ({
+        visible: (obj) => ({
             opacity: 1,
             y: 0,
             transition: {
                 duration: 0.5,
-                delay: 1 - (arr[1] > 1 ? 0.8 : 0) - (arr[0] ? 0.4 : 0)
+                delay: 1 - (obj.number > 1 ? 0.8 : 0) - (obj.isNavbarBreakpoint ? 0.4 : 0)
             }
         })
     },
@@ -18,12 +18,12 @@ export const projectVariants = {
             opacity: 0,
             y: -20
         },
-        visible: (arr) => ({
+        visible: (obj) => ({
             opacity: 1,
             y: 0,
             transition: {
                 duration: 0.5,
-                delay: 1.2 - (arr[1] > 1 ? 0.8 : 0) - (arr[0] ? 0.4 : 0)
+                delay: 1.2 - (obj.number > 1 ? 0.8 : 0) - (obj.isNavbarBreakpoint ? 0.4 : 0)
             }
         })
     },
@@ -32,12 +32,12 @@ export const projectVariants = {
             opacity: 0,
             y: -20
         },
-        visible: (arr) => ({
+        visible: (obj) => ({
             opacity: 1,
             y: 0,
             transition: {
                 duration: 0.5,
-                delay: 1.4 - (arr[1] > 1 ? 0.8 : 0) - (arr[0] ? 0.4 : 0)
+                delay: 1.4 - (obj.number > 1 ? 0.8 : 0) - (obj.isNavbarBreakpoint ? 0.4 : 0)
             }
         })
     },
@@ -46,12 +46,12 @@ export const projectVariants = {
             opacity: 0,
             y: -20
         },
-        visible: (arr) => ({
+        visible: (obj) => ({
             opacity: 1,
             y: 0,
             transition: {
                 duration: 0.5,
-                delay: 1.4 - (arr[1] > 1 ? 0.8 : 0) - (arr[0] ? 0.4 : 0)
+                delay: 1.4 - (obj.number > 1 ? 0.8 : 0) - (obj.isNavbarBreakpoint ? 0.4 : 0)
             }
         })
     },
@@ -60,12 +60,12 @@ export const projectVariants = {
             opacity: 0,
             y: -20
         },
-        visible: (arr) => ({
+        visible: (obj) => ({
             opacity: 1,
             y: 0,
             transition: {
                 duration: 0.5,
-                delay: 1.8 - (arr[1] > 1 ? 0.8 : 0) - (arr[0] ? 0.4 : 0)
+                delay: 1.8 - (obj.number > 1 ? 0.8 : 0) - (obj.isNavbarBreakpoint ? 0.4 : 0)
             }
         })
     }
@@ -77,12 +77,12 @@ export const skillsVariants = {
             width: 0,
             top: 32
         },
-        visible: (arr) => ({
-            width: 400,
+        visible: (obj) => ({
+            width: obj.isTablet ? 300 : 400,
             transition: {
                 ease: 'easeInOut',
                 duration: 0.8,
-                delay: 1.4 - (arr[1] > 1 ? 0.8 : 0) - (arr[0] ? 0.4 : 0)
+                delay: 1.4 - (obj.number > 1 ? 0.8 : 0) - (obj.isNavbarBreakpoint ? 0.4 : 0)
             }
         })
     },
@@ -91,11 +91,11 @@ export const skillsVariants = {
             opacity: 0,
             y: -20
         },
-        visible: (arr) => ({
+        visible: (obj) => ({
             opacity: 1,
             y: 0,
             transition: {
-                delay: 1.6 - (arr[1] > 1 ? 0.8 : 0) - (arr[3] ? 0.4 : 0) + arr[0] * 0.15,
+                delay: 1.6 - (obj.number > 1 ? 0.8 : 0) - (obj.isNavbarBreakpoint ? 0.4 : 0) + obj.index * 0.15,
                 ease: 'easeOut',
                 duration: 0.4
             }

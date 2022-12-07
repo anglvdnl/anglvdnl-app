@@ -13,10 +13,13 @@ import location from '../assets/icons/location.svg';
 import text from '../lang/en.json';
 import Button from '../UI/Button/Button';
 import { motion } from 'framer-motion';
+import { contactsVariants, infoVariants } from './variants/ContactsVariants';
 
 function Contacts(props) {
 
     const isNavbarBreakpoint = useMediaQuery('(max-width: 1200px)');
+    const isDesktop = useMediaQuery('(max-width: 1410px)');
+    const isPhone600 = useMediaQuery('(max-width: 600px)');
     const [isNavigationOpen, setIsNavigationOpen] = useState(false);
 
     const handleNavigationToggle = () => {
@@ -30,67 +33,6 @@ function Contacts(props) {
         {img: instagram, link: process.env.REACT_APP_INSTAGRAM_LINK}
     ];
 
-    const socialVariants = {
-        hidden: {
-            opacity: 0,
-            y: -100
-        },
-        visible: (i) => ({
-            opacity: 1,
-            y: 0,
-            transition: {
-                ease: 'anticipate',
-                delay: 2 + i * 0.1,
-                duration: 1
-            }
-        })
-    };
-
-    const contactsVariants = {
-        hidden: {
-            opacity: 0,
-            height: 0
-        },
-        visible: {
-            opacity: 1,
-            height: '100vh',
-            transition: {
-                ease: 'easeInOut',
-                duration: 0.8,
-                delay: 0.3
-            }
-        }
-    };
-
-    const inputVariants = {
-        hidden: {
-            opacity: 0
-        },
-        visible: {
-            opacity: 1,
-            transition: {
-                ease: 'easeInOut',
-                duration: 0.4,
-                delay: 1
-            }
-        }
-    };
-
-    const infoVariants = {
-        hidden: {
-            opacity: 0,
-            width: 0
-        },
-        visible: {
-            opacity: 1,
-            width: 800,
-            transition: {
-                ease: "easeInOut",
-                duration: 1,
-                delay: 1.5
-            }
-        }
-    };
     return (
         <>
             {isNavigationOpen && (
@@ -105,13 +47,13 @@ function Contacts(props) {
                 </header>
                 <motion.div
                     className={styles.contacts}
-                    variants={contactsVariants}
+                    variants={contactsVariants.contacts}
                     initial="hidden"
                     animate="visible"
                 >
                     <motion.div
                         className={styles.contacts__wrapper}
-                        variants={inputVariants}
+                        variants={contactsVariants.input}
                         initial="hidden"
                         animate="visible"
                     >
@@ -125,9 +67,10 @@ function Contacts(props) {
                 </motion.div>
                 <motion.div
                     className={styles.info}
-                    variants={infoVariants}
+                    variants={infoVariants.info}
                     initial="hidden"
                     animate="visible"
+                    custom={{isDesktop: isDesktop, isTablet: isNavbarBreakpoint, isMobile: isPhone600}}
                 >
                     <div className={styles.info__text}>
                         <h2>Info</h2>
@@ -150,7 +93,7 @@ function Contacts(props) {
                                 href={social.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                variants={socialVariants}
+                                variants={infoVariants.socials}
                                 initial="hidden"
                                 animate="visible"
                                 custom={index}

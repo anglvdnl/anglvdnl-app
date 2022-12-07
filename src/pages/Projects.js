@@ -10,8 +10,6 @@ import BurgerMenu from '../components/BurgerMenu/BurgerMenu';
 function Projects(props) {
 
     const isNavbarBreakpoint = useMediaQuery('(max-width: 1200px)');
-    const isPhone950 = useMediaQuery("(max-width: 950px)")
-
     const [isNavigationOpen, setIsNavigationOpen] = useState(false);
 
     const handleNavigationToggle = () => {
@@ -28,7 +26,7 @@ function Projects(props) {
             y: 0,
             transition: {
                 duration: 0.5,
-                delay: isPhone950 ? 0.4 : 0.8
+                delay: isNavbarBreakpoint ? 0.4 : 0.8
             }
         }
     };

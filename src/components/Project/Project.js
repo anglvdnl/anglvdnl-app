@@ -12,7 +12,8 @@ function Project({number, title, desc, skills, img, link, isReversed}) {
 
     const isTablet = useMediaQuery('(max-width: 1110px)');
     const isPhone950 = useMediaQuery('(max-width: 950px)');
-    const isNavbarBreakpoint = useMediaQuery('(max-width: 1200px)')
+    const isPhone560 = useMediaQuery('(max-width: 560px)');
+    const isNavbarBreakpoint = useMediaQuery('(max-width: 1200px)');
 
     const controls = useAnimation();
     const ref = useRef(null);
@@ -23,11 +24,12 @@ function Project({number, title, desc, skills, img, link, isReversed}) {
             controls.start('visible');
         }
     }, [controls, inViewport]);
-    console.log("pizda")
 
     return (
         <div
-            className={`${styles.project} ${isReversed ? styles['project-reversed'] : null}`}
+            className={`${styles.project} 
+                ${isReversed ? styles['project-reversed'] : null} 
+                ${number > 1 ? styles['next-project'] : null}`}
         >
             <div className={styles.project__info}>
                 <div className={styles.info__title}>
@@ -59,7 +61,12 @@ function Project({number, title, desc, skills, img, link, isReversed}) {
                         variants={isPhone950 ? mobileSkillsVariants.line : skillsVariants.line}
                         initial="hidden"
                         animate={number > 1 ? controls : 'visible'}
-                        custom={{isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
+                        custom={{
+                            isNavbarBreakpoint: isNavbarBreakpoint,
+                            number: number,
+                            isTablet: isTablet,
+                            isPhone560: isPhone560
+                        }}
                         src={dotLine}
                         alt=""
                     />
@@ -96,14 +103,16 @@ function Project({number, title, desc, skills, img, link, isReversed}) {
                     </a>
                 </motion.div>
             </div>
-            <motion.img
-                variants={isPhone950 ? mobileProjectVariants.img : projectVariants.img}
-                initial="hidden"
-                animate={number > 1 ? controls : 'visible'}
-                custom={{isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
-                src={img}
-                alt=""
-                className={styles.project__img}/>
+            <div className={styles.project__img}>
+                <motion.img
+                    variants={isPhone950 ? mobileProjectVariants.img : projectVariants.img}
+                    initial="hidden"
+                    animate={number > 1 ? controls : 'visible'}
+                    custom={{isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
+                    src={img}
+                    alt=""
+                />
+            </div>
         </div>
     );
 }
