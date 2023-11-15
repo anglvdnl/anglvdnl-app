@@ -11,8 +11,8 @@ import { mobileProjectVariants, mobileSkillsVariants } from './ProjectVariants/P
 function Project({number, title, desc, skills, img, link, isReversed}) {
 
     const isTablet = useMediaQuery('(max-width: 1110px)');
-    const isPhone950 = useMediaQuery('(max-width: 950px)');
-    const isPhone560 = useMediaQuery('(max-width: 560px)');
+    const IsMobile950 = useMediaQuery('(max-width: 950px)');
+    const IsMobile560 = useMediaQuery('(max-width: 560px)');
     const isNavbarBreakpoint = useMediaQuery('(max-width: 1200px)');
 
     const controls = useAnimation();
@@ -34,7 +34,7 @@ function Project({number, title, desc, skills, img, link, isReversed}) {
             <div className={styles.project__info}>
                 <div className={styles.info__title}>
                     <motion.p
-                        variants={isPhone950 ? mobileProjectVariants.number : projectVariants.number}
+                        variants={IsMobile950 ? mobileProjectVariants.number : projectVariants.number}
                         initial="hidden"
                         animate={number > 1 ? controls : 'visible'}
                         custom={{isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
@@ -42,14 +42,14 @@ function Project({number, title, desc, skills, img, link, isReversed}) {
                     >0{number}.
                     </motion.p>
                     <motion.p
-                        variants={isPhone950 ? mobileProjectVariants.title : projectVariants.title}
+                        variants={IsMobile950 ? mobileProjectVariants.title : projectVariants.title}
                         initial="hidden"
                         animate={number > 1 ? controls : 'visible'}
                         custom={{isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
                     >{title}</motion.p>
                 </div>
                 <motion.p
-                    variants={isPhone950 ? mobileProjectVariants.text : projectVariants.text}
+                    variants={IsMobile950 ? mobileProjectVariants.text : projectVariants.text}
                     initial="hidden"
                     animate={number > 1 ? controls : 'visible'}
                     custom={{isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
@@ -58,14 +58,14 @@ function Project({number, title, desc, skills, img, link, isReversed}) {
                 </motion.p>
                 <div className={styles.info__skills}>
                     <motion.img
-                        variants={isPhone950 ? mobileSkillsVariants.line : skillsVariants.line}
+                        variants={IsMobile950 ? mobileSkillsVariants.line : skillsVariants.line}
                         initial="hidden"
                         animate={number > 1 ? controls : 'visible'}
                         custom={{
                             isNavbarBreakpoint: isNavbarBreakpoint,
                             number: number,
                             isTablet: isTablet,
-                            isPhone560: isPhone560
+                            IsMobile560: IsMobile560
                         }}
                         src={dotLine}
                         alt=""
@@ -73,7 +73,7 @@ function Project({number, title, desc, skills, img, link, isReversed}) {
                     <div className={styles.skillsList}>
                         {skills.map((x, index) => (
                             <motion.div
-                                variants={isPhone950 ? mobileSkillsVariants.skills : skillsVariants.skills}
+                                variants={IsMobile950 ? mobileSkillsVariants.skills : skillsVariants.skills}
                                 initial="hidden"
                                 animate={number > 1 ? controls : 'visible'}
                                 custom={{index: index, isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
@@ -87,7 +87,7 @@ function Project({number, title, desc, skills, img, link, isReversed}) {
                     </div>
                 </div>
                 <motion.div
-                    variants={isPhone950 ? mobileProjectVariants.link : projectVariants.link}
+                    variants={IsMobile950 ? mobileProjectVariants.link : projectVariants.link}
                     initial="hidden"
                     animate={number > 1 ? controls : 'visible'}
                     custom={{isNavbarBreakpoint: isNavbarBreakpoint, number: number}}
@@ -105,7 +105,7 @@ function Project({number, title, desc, skills, img, link, isReversed}) {
             </div>
             <div className={styles.project__img}>
                 <motion.img
-                    variants={isPhone950 ? mobileProjectVariants.img : projectVariants.img}
+                    variants={IsMobile950 ? mobileProjectVariants.img : projectVariants.img}
                     initial="hidden"
                     animate={number > 1 ? controls : 'visible'}
                     custom={{isNavbarBreakpoint: isNavbarBreakpoint, number: number}}

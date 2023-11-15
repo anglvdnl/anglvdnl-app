@@ -11,12 +11,18 @@
   "SURNAME": "Angelov.",
   "SEND_EMAIL": "Send email",
   "OPEN_CV": "Open CV",
-  "WHO_AM_I": "WHO AM I",
+  "WHO_AM_I": "WHO I AM",
   "ABOUT_ME_TITLE": "About Me",
   "INTRODUCE": "I’m Daniel, nice to meet you!",
-  "TEXT_2022": "I'm Front-End Developer from Ukraine, Lviv. I have little work experience in a company & commercial experience in creating an online store with a team.",
+  "TEXT_2022": "I'm Front-End Developer from Ukraine, Lviv. I have a variety of work experience including commercial experience in creating an online store with a team.",
   "TEXT_2019": "I've been actively studying front-end for about a year and have already completed several courses. I really enjoy my occupation and I'd like to get better in it.",
   "TEXT_CHILDHOOD": "My interest in IT started out of simple curiosity. At first I was interested in Game Development, but after taking a course, I realize that Web Development looks more attractive for me.",
   "CONTACT_ME": "Contact me",
-  "REACH_OUT": "Reach out to me. I look forward for cooperation on exciting projects"
+  "REACH_OUT": "Reach out to me. I look forward for cooperation on exciting projects",
+  "INFO": "Info",
+  "EMAIL": "1angelovdaniel@gmail.com",
+  "PHONE_NUMBER": "+380 (95) 139 75 46",
+  "LOCATION": "Denmark",
+  "CONTACT_SOON": "Your message has been successfully sent. I will contact you very soon!",
+  "INVALID_DATA": "Invalid data"
 }

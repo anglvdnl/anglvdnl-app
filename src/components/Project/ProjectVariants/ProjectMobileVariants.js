@@ -78,7 +78,7 @@ export const mobileSkillsVariants = {
             top: 32
         },
         visible: (obj) => ({
-            width: obj.isPhone560 ? 300 : 400,
+            width: obj.IsMobile560 ? 300 : 400,
             transition: {
                 ease: 'easeInOut',
                 duration: 0.8,

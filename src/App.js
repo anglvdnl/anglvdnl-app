@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutMe from './pages/AboutMe';
 import Projects from './pages/Projects';
@@ -8,7 +8,7 @@ import BackgroundLayout from './layouts/BackgroundLayout';
 function App() {
     return (
         <BackgroundLayout>
-            <Router>
+            <Router basename="/">
                 <Routes>
                     <Route path="/" element={<Home/>}/>
                     <Route path="about-me" element={<AboutMe/>}/>

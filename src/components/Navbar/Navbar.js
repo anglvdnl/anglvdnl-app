@@ -5,9 +5,11 @@ import NavbarDesktop from '../NavbarDesktop/NavbarDesktop';
 function Navbar({isBreakpoint, handleNavigationToggle}) {
 
     return (
-        isBreakpoint
-        ? <NavbarMobile handleMenu={handleNavigationToggle} />
-        : <NavbarDesktop />
+        <header>
+            {isBreakpoint
+                ? <NavbarMobile handleMenu={handleNavigationToggle}/>
+                : <NavbarDesktop/>}
+        </header>
     );
 }
 

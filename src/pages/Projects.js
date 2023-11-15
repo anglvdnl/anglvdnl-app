@@ -6,8 +6,13 @@ import { motion } from 'framer-motion';
 import { projects } from '../data/ProjectsData/projectsList';
 import useMediaQuery from '../hooks/useMediaQuery.ts';
 import BurgerMenu from '../components/BurgerMenu/BurgerMenu';
+import { useLocation } from 'react-router-dom';
 
 function Projects(props) {
+    const loc = useLocation();
+    if (loc.pathname === '/projects') {
+        document.body.style.overflow = 'auto';
+    }
 
     const isNavbarBreakpoint = useMediaQuery('(max-width: 1200px)');
     const [isNavigationOpen, setIsNavigationOpen] = useState(false);
@@ -37,12 +42,10 @@ function Projects(props) {
                 <BurgerMenu handleNavigationToggle={handleNavigationToggle}/>
             )}
             <div className={styles.container}>
-                <header>
-                    <Navbar
-                        isBreakpoint={isNavbarBreakpoint}
-                        handleNavigationToggle={handleNavigationToggle}
-                    />
-                </header>
+                <Navbar
+                    isBreakpoint={isNavbarBreakpoint}
+                    handleNavigationToggle={handleNavigationToggle}
+                />
                 <motion.h1
                     variants={headingVariants}
                     initial={'hidden'}
