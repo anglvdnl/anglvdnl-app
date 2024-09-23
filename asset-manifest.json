@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/anglvdnl-app/static/css/main.d0d2ecd4.css",
-    "main.js": "/anglvdnl-app/static/js/main.999c1943.js",
+    "main.js": "/anglvdnl-app/static/js/main.d3a331d0.js",
     "static/js/787.150169f9.chunk.js": "/anglvdnl-app/static/js/787.150169f9.chunk.js",
     "static/media/me.jpg": "/anglvdnl-app/static/media/me.5596711d89628c3a1408.jpg",
     "static/media/Spheres.png": "/anglvdnl-app/static/media/Spheres.f40b4784ce3853cecdc8.png",
@@ -11,6 +11,7 @@
     "static/media/pc.jpg": "/anglvdnl-app/static/media/pc.7cee450f448fa8d161ec.jpg",
     "static/media/apples.jpg": "/anglvdnl-app/static/media/apples.ae10b347380f84a5c0c0.jpg",
     "static/media/LotusIntimo.png": "/anglvdnl-app/static/media/LotusIntimo.0a84a3d1c035a466434e.png",
+    "static/media/cognify.png": "/anglvdnl-app/static/media/cognify.604ae7d1e1de6225f253.png",
     "static/media/house.jpg": "/anglvdnl-app/static/media/house.211155d311178cc6d3b3.jpg",
     "static/media/LogoSmallCircle.svg": "/anglvdnl-app/static/media/LogoSmallCircle.00b578a980f4017a0a8944434bb7848d.svg",
     "static/media/LogoBigCircle.svg": "/anglvdnl-app/static/media/LogoBigCircle.3a57fdf23cb5524ff0b4128787e44e37.svg",
@@ -28,11 +29,11 @@
     "static/media/EmailArrow.svg": "/anglvdnl-app/static/media/EmailArrow.ed44e5e4ab90abe62140a8d2d1c188fc.svg",
     "static/media/VisitSiteArrow.svg": "/anglvdnl-app/static/media/VisitSiteArrow.cf9469f2b039c6afbc4bfa275b277948.svg",
     "main.d0d2ecd4.css.map": "/anglvdnl-app/static/css/main.d0d2ecd4.css.map",
-    "main.999c1943.js.map": "/anglvdnl-app/static/js/main.999c1943.js.map",
+    "main.d3a331d0.js.map": "/anglvdnl-app/static/js/main.d3a331d0.js.map",
     "787.150169f9.chunk.js.map": "/anglvdnl-app/static/js/787.150169f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d0d2ecd4.css",
-    "static/js/main.999c1943.js"
+    "static/js/main.d3a331d0.js"
   ]
 }
