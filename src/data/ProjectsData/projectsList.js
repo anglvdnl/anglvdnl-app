@@ -1,13 +1,23 @@
 import IronAndEarth from '../../assets/images/IronAndEarth.png';
 import LotusIntimo from '../../assets/images/LotusIntimo.png';
 import Dogmania from '../../assets/images/dogmania.png';
+import Cognify from '../../assets/images/cognify.png';
 
 export const projects = [
+    {
+        title: 'Cognify',
+        desc: 'An interactive education platform designed to enhance online learning experiences with dynamic content delivery and user engagement features.',
+        skills: ['Next.js', 'TS', "React query", "Tailwind"],
+        link: '',
+        img: Cognify,
+        isReversed: true,
+        position: 0
+    },
     {
         title: 'Dogmania',
         desc: 'An online clothing shop for dogs. Contributing to the entire frontend using React, Next.js, Typescript, and SCSS. Key responsibilities included crafting essential logic for shop items, orders, and the cart. Collaborated effectively within a team and interfaced with a REST API to ensure seamless functionality.',
         skills: ['React', 'Next.js', 'TypeScript', 'Rest API'],
-        link: 'https://dev.dogmania.com.ua',
+        link: '',
         img: Dogmania,
         isReversed: false,
         position: 250
